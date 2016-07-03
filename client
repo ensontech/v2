@@ -4,7 +4,7 @@ import socket
 tunnel = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
 ### Bind Socket to Port ###
-server = ('localhost',50101)
+server = ((socket.gethostbyname('0.0.0.0')),50101)
 tunnel.bind(server)
 
 ### Listen for incoming connections ###
