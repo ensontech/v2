@@ -1,0 +1,24 @@
+import socket
+
+### Create TCP/IP Socket ###
+tunnel = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+### Bind Socket to Port ###
+server = ('localhost',50101)
+tunnel.bind(server)
+
+### Listen for incoming connections ###
+tunnel.listen(5)
+
+while True:
+    connection, client_address = tunnel.accept()
+    try:
+        ### Receive data in 1024 byte packages and execute commands ###
+        while True:
+            data = connection.receive(1024)
+            if data:
+                ### Insert script to run commands in recieved data here ###
+            else:
+                break
+    finally:
+        connection.close()
