@@ -1,0 +1,20 @@
+import os
+import sys
+
+### Create Folder ###
+def createfolder(arg1):
+    filename = arg1
+    directory = os.path.dirname(filename)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    else:
+        print("Directory "+ '"' + directory + '"' +" already exists!")
+
+### Delete Folder ###
+def deletefolder(arg1):
+    filename = arg1
+    directory = os.path.dirname(filename)
+    if os.path.exists(directory):
+        os.removedirs(directory)
+    else:
+        print("Directory "+ '"' + directory + '"' +" does not exists!")
