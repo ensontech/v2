@@ -1,0 +1,6 @@
+import subprocess
+
+### Function to run OS level commands ###
+def cmdexec(arg1):
+    cmd = arg1.split()
+    subprocess.call(cmd)
