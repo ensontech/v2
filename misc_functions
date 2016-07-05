@@ -8,5 +8,5 @@ def cmdexec(arg1):
 
 ### Function to generate random 6-digit number to assign as JobID ###
 def jobid():
-    id = random.randint(1000000,9999999)
+    id = random.randint(100000000,999999999)
     return id
