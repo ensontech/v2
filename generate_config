@@ -16,4 +16,4 @@ def functionsource(arg1):
 	return sourcecode
 
 ### Config Start ###
-dependents ['insert','modules','here']
+
