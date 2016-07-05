@@ -2,7 +2,7 @@ jobID = jobid()
 
 ### List functions ###
 
-functionlist = {'createfolder':'filefunctions',
+functionindex = {'createfolder':'filefunctions',
                 'deletefolder':'filefunctions',
                 'startservice':'servicefunctions',
                 'stopservice':'servicefunctions'}
@@ -10,7 +10,7 @@ functionlist = {'createfolder':'filefunctions',
 ### Get source code of function from module ###
 def functionsource(arg1):
 	import inspect
-	mod = __import__(functionlist[arg1])
+	mod = __import__(functionindex[arg1])
 	function = getattr(mod, arg1)
 	sourcecode = inspect.getsource(function)
 	return sourcecode
