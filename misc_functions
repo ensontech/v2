@@ -1,12 +1,11 @@
-import subprocess
-import random
-
 ### Function to run OS level commands ###
 def cmdexec(arg1):
+    import subprocess
     cmd = arg1.split()
     subprocess.call(cmd)
 
 ### Function to generate random 6-digit number to assign as JobID ###
 def jobid():
+    import random
     id = random.randint(100000000,999999999)
     return id
