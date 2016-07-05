@@ -1,10 +1,19 @@
 jobID = jobid()
 
-def functionfinder(arg1):
-    functionlist = {'createfolder':'filefunctions.py',
-                    'deletefolder':'filefunctions.py',
-                    'startservice':servicefunctions.py,
-                    'stopservice':servicefunctions.py}
-    import functionlist[arg1] 
+### List functions ###
+
+functionlist = {'createfolder':'filefunctions',
+                'deletefolder':'filefunctions',
+                'startservice':'servicefunctions',
+                'stopservice':'servicefunctions'}
+
+### Get source code of function from module ###
+def functionsource(arg1):
+	import inspect
+	mod = __import__(functionlist[arg1])
+	function = getattr(mod, arg1)
+	sourcecode = inspect.getsource(function)
+	return sourcecode
+
 ### Config Start ###
 dependents ['insert','modules','here']
