@@ -1,8 +1,6 @@
-import os
-import sys
-
 ### Create Folder ###
 def createfolder(arg1):
+    import os
     filename = arg1
     directory = os.path.dirname(filename)
     if not os.path.exists(directory):
@@ -12,6 +10,7 @@ def createfolder(arg1):
 
 ### Delete Folder ###
 def deletefolder(arg1):
+    import os
     filename = arg1
     directory = os.path.dirname(filename)
     if os.path.exists(directory):
