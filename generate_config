@@ -1,0 +1,10 @@
+jobID = jobid()
+
+def functionfinder(arg1):
+    functionlist = {'createfolder':'filefunctions.py',
+                    'deletefolder':'filefunctions.py',
+                    'startservice':servicefunctions.py,
+                    'stopservice':servicefunctions.py}
+    import functionlist[arg1] 
+### Config Start ###
+dependents ['insert','modules','here']
