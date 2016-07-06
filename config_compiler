@@ -1,7 +1,9 @@
+import inspect
+import functionmatrix
+import re
+
 ### Create FunctionIndex ###
 def functionindex():
-    import inspect
-    import functionmatrix
     functions = inspect.getmembers(functionmatrix, inspect.isfunction)
     info = {}
     for f in functions:
@@ -17,7 +19,6 @@ def functionsource(arg1):
 
 ### Derive Function from Command ###
 def derivefunction(arg1):
-    import re
     func = re.sub('\(.*','',arg1)
     return func
 
