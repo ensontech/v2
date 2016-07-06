@@ -1,5 +1,3 @@
-jobID = jobid()
-
 ### Create FunctionIndex ###
 def functionindex():
     import inspect
@@ -17,10 +15,24 @@ def functionsource(arg1):
     sourcecode = s[arg1]
     return sourcecode
 
-### Config Start ###
+### Derive Function from Command ###
+def derivefunction(arg1):
+    import re
+    func = re.sub('\(.*','',arg1)
+    return func
 
-functions = ['input','function','names','here']
-config = ""
-
-for f in functions:
+### Generate Source ###
+def generatesource(arg1):
+    global config
+    f = derivefunction(arg1)
     config+= functionsource(f)
+
+### Config Start ###
+config = ""
+commands = ['createfolder("test/")','deletefolder("test/")']
+for c in commands:
+    generatesource(c)
+    config+= (c + '\n')
+
+print(config)
+exec(config)
