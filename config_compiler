@@ -30,10 +30,21 @@ def generatesource(arg1):
 
 ### Config Start ###
 config = ""
-commands = ['createfolder("test/")','deletefolder("test/")']
-for c in commands:
-    generatesource(c)
-    config+= (c + '\n')
 
-print(config)
-exec(config)
+### Write Config ###
+def writeconfig(args):
+    commands = args
+    global config
+    for c in commands:
+        generatesource(c)
+        config+= (c + '\n')
+    write = config
+    config = ""
+    return write
+
+### EXAMPLE ###
+### Import Compiler
+import compiler
+### Generate Config ###
+config = compiler.writeconfig(['createfolder("test/")','deletefolder("test/")'])
+### Send config to client (which will execute)###
