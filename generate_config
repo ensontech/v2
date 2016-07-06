@@ -1,19 +1,30 @@
 jobID = jobid()
 
-### List functions ###
-
-functionindex = {'createfolder':'filefunctions',
+### Create FunctionIndex ###
+def functionindex():
+    import inspect
+    import functionmatrix
+    functions = inspect.getmembers(functionmatrix, inspect.isfunction)
+    info = {}
+    for f in functions:
+        source = inspect.getsource(getattr(functionmatrix, f[0]))
+        info[f[0]] = source
+    return info
+    ('{'createfolder':'filefunctions',
                 'deletefolder':'filefunctions',
                 'startservice':'servicefunctions',
                 'stopservice':'servicefunctions'}
 
-### Get source code of function from module ###
+### Get source code of function from FunctionIndex ###
 def functionsource(arg1):
-	import inspect
-	mod = __import__(functionindex[arg1])
-	function = getattr(mod, arg1)
-	sourcecode = inspect.getsource(function)
+    s = functionindex()
+    sourcecode = s[arg1]
 	return sourcecode
 
 ### Config Start ###
 
+functions = ['input','function','names','here']
+config = ""
+
+for f in functions:
+    config+= functionsource(f)
