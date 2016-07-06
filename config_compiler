@@ -10,10 +10,6 @@ def functionindex():
         source = inspect.getsource(getattr(functionmatrix, f[0]))
         info[f[0]] = source
     return info
-    ('{'createfolder':'filefunctions',
-                'deletefolder':'filefunctions',
-                'startservice':'servicefunctions',
-                'stopservice':'servicefunctions'}
 
 ### Get source code of function from FunctionIndex ###
 def functionsource(arg1):
