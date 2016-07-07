@@ -11,10 +11,11 @@ def createfolder(arg1):
 ### Delete Folder ###
 def deletefolder(arg1):
     import os
+    import shutil
     filename = arg1
     directory = os.path.dirname(filename)
     if os.path.exists(directory):
-        os.removedirs(directory)
+        shutil.rmtree(directory)
     else:
         print("Directory "+ '"' + directory + '"' +" does not exists!")
 
