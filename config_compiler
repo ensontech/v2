@@ -17,26 +17,19 @@ def functionsource(arg1):
     sourcecode = s[arg1]
     return sourcecode
 
-### Derive Function from Command ###
-def derivefunction(arg1):
-    func = re.sub('\(.*','',arg1)
-    return func
-
 ### Generate Source ###
 def generatesource(arg1):
-    global config
-    f = derivefunction(arg1)
-    config+= functionsource(f)
-
-### Config Start ###
-config = ""
+    f = re.sub('\(.*','',arg1)
+    i = functionindex()
+    return i[f]
 
 ### Write Config ###
+config = ""
 def writeconfig(args):
     commands = args
     global config
     for c in commands:
-        generatesource(c)
+        config+= generatesource(c)
         config+= (c + '\n')
     write = config
     config = ""
