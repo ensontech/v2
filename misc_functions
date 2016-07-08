@@ -9,3 +9,15 @@ def jobid():
     import random
     id = random.randint(100000000,999999999)
     return id
+
+### Detect Platform ###
+def detectplatform():
+    import sys
+    if sys.platform == 'linux2':
+        return "linux"
+    elif sys.platform == 'win32':
+        return "windows"
+    elif sys.platform == 'darwin':
+        return "mac"
+    else:
+        return "unrecognised"
