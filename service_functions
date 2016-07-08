@@ -1,11 +1,24 @@
 ### Start Service ###
 def startservice(arg1):
-    cmdexec("service "+arg1+" start")
+    x = detectplatform()
+    if x == 'linux':
+        cmdexec("service "+arg1+" start")
+    elif x == 'windows':
+        cmdexec("powershell (get-service -name "+arg1+").start())
 
 ### Stop Service ###
 def stopservice(arg1):
-    cmdexec("service "+arg1+" stop")
+    x = detectplatform()
+    if x == 'linux':
+        cmdexec("service "+arg1+" stop")
+    elif x == 'windows':
+        cmdexec("powershell (get-service -name "+arg1+").stop())
 
 ### Restart Service ###
 def restartservice(arg1):
-    cmdexec("service "+arg1+" restart")
+    x = detectplatform()
+    if x == 'linux':
+        cmdexec("service "+arg1+" restart")
+    elif x == 'windows':
+        cmdexec("powershell (get-service -name "+arg1+").stop())
+        cmdexec("powershell (get-service -name "+arg1+").start())
