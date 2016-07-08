@@ -1,0 +1,11 @@
+### Start Service ###
+def startservice(arg1):
+    cmdexec("service "+arg1+" start")
+
+### Stop Service ###
+def stopservice(arg1):
+    cmdexec("service "+arg1+" stop")
+
+### Restart Service ###
+def restartservice(arg1):
+    cmdexec("service "+arg1+" restart")
