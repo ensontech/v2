@@ -1,0 +1,7 @@
+### Install Server Feature ###
+def installserverfeature(arg1):
+    cmdexec("powershell add-windowsfeature -name "+arg1)
+
+### Uninstall Server Feature ###
+def uninstallserverfeature(arg1):
+    cmdexec("powershell remove-windowsfeature -name "+arg1)
