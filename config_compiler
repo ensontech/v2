@@ -27,9 +27,16 @@ def generatesource(arg1):
 def writeconfig(args):
     config = ""
     commands = args
-    global config
     for c in commands:
-        config+= generatesource(c)
+        s = generatesource(c)
+        if "dependants" in s:
+            import ast
+            config+= s
+            depend = ast.literal_eval((re.search("dependants.*",s).group()).replace('dependants = ',''))
+            for d in depend:
+                config+= generatesource(d)
+        else:
+            config+= s
         config+= (c + '\n')
     return config
 
