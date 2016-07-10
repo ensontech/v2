@@ -1,0 +1,17 @@
+### Install Package ###
+def installpkg(arg1):
+    cmdexec("apt-get -q install "+arg1+" -y")
+
+### Remove Package ###
+def removepkg(arg1):
+    cmdexec("apt-get -q remove "+arg1+" -y")
+
+### Add User ###
+def adduser(arg1,arg2):
+    cmdexe("useradd "+arg1)
+    cmdexe("echo "arg1":"arg2" | chpasswd")
+
+### Delete User ###
+def deleteuser(arg1):
+    cmdexe("deluser "+arg1)
+
