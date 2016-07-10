@@ -24,16 +24,14 @@ def generatesource(arg1):
     return i[f]
 
 ### Write Config ###
-config = ""
 def writeconfig(args):
+    config = ""
     commands = args
     global config
     for c in commands:
         config+= generatesource(c)
         config+= (c + '\n')
-    write = config
-    config = ""
-    return write
+    return config
 
 ### EXAMPLE ###
 ### Import Compiler
