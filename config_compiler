@@ -29,18 +29,18 @@ def writeconfig(args):
     commands = args
     for c in commands:
         s = generatesource(c)
-        if "dependants" in s:
-            import ast
-            config+= s
-            depend = ast.literal_eval((re.search("dependants.*",s).group()).replace('dependants = ',''))
-            for d in depend:
-                ds = generatesource(d)
-                if ds not in config:
-                    config+= ds
-                else:
-                    pass
-        else:
-            config+= s
+        if s not in config:
+            if "dependants" in s:
+                import ast
+                config+= s
+                depend = ast.literal_eval((re.search("dependants.*",s).group()).replace('dependants = ',''))
+                for d in depend:
+                    if d not in config:
+                        config+= generatesource(d)
+                    else:
+                        pass
+            else:
+                config+= s
         config+= (c + '\n')
     return config
 
