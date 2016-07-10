@@ -5,13 +5,3 @@ def installpkg(arg1):
 ### Remove Package ###
 def removepkg(arg1):
     cmdexec("apt-get -q remove "+arg1+" -y")
-
-### Add User ###
-def adduser(arg1,arg2):
-    cmdexe("useradd "+arg1)
-    cmdexe("echo "arg1":"arg2" | chpasswd")
-
-### Delete User ###
-def deleteuser(arg1):
-    cmdexe("deluser "+arg1)
-
