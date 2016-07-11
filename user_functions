@@ -3,7 +3,7 @@ def adduser(arg1,arg2):
     p = detectplatform()
     if p == 'linux':
         cmdexec("useradd "+arg1)
-        cmdexec("echo "arg1":"arg2" | chpasswd")
+        cmdexec("echo "+arg1+":"+arg2+" | chpasswd")
     else:
         cmdexec("NET USER "+arg1+" "+arg2+" /ADD")
 
