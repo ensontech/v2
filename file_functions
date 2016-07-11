@@ -1,7 +1,7 @@
 ### Create Folder ###
 def createfolder(arg1):
     import os
-    filename = arg1
+    filename = arg1.encode('string-escape')
     directory = os.path.dirname(filename)
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -12,8 +12,7 @@ def createfolder(arg1):
 def deletefolder(arg1):
     import os
     import shutil
-    filename = arg1
-    directory = os.path.dirname(filename)
+    directory = os.path.dirname(arg1.encode('string-escape'))
     if os.path.exists(directory):
         shutil.rmtree(directory)
     else:
@@ -21,7 +20,7 @@ def deletefolder(arg1):
 
 ### Create File ###
 def createfile(arg1,arg2):
-    nf = open(arg1,"w")
+    nf = open(arg1.encode('string-escape'),"w")
     if arg2 != None:
     	nf.write(arg2)
     	nf.close()
@@ -31,4 +30,4 @@ def createfile(arg1,arg2):
 ### Delete File ###
 def deletefile(arg1):
     import os
-    os.remove(arg1)
+    os.remove(arg1.encode('string-escape'))
