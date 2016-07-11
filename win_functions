@@ -1,11 +1,14 @@
 ### Install Server Feature ###
 def installserverfeature(arg1):
+    dependants = ['cmdexec']
     cmdexec("powershell add-windowsfeature -name "+arg1)
 
 ### Uninstall Server Feature ###
 def uninstallserverfeature(arg1):
+    dependants = ['cmdexec']
     cmdexec("powershell remove-windowsfeature -name "+arg1)
 
 ### Apply Registry File ###
 def applyreg(arg1):
+    dependants = ['cmdexec']
     cmdexec("regedit /S "+arg1)
