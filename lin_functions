@@ -7,3 +7,4 @@ def installpkg(arg1):
 def removepkg(arg1):
     dependants = ['cmdexec']
     cmdexec("apt-get -q remove "+arg1+" -y")
+    cmdexec("apt-get autoremove -y")
