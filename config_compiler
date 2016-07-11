@@ -35,8 +35,9 @@ def writeconfig(args):
                 config+= s
                 depend = ast.literal_eval((re.search("dependants.*",s).group()).replace('dependants = ',''))
                 for d in depend:
-                    if d not in config:
-                        config+= generatesource(d)
+                    ds = generatesource(d)
+                    if ds not in config:
+                        config+= ds
                     else:
                         pass
             else:
