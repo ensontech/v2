@@ -32,4 +32,3 @@ def createfile(arg1,arg2):
 def deletefile(arg1):
     import os
     os.remove(arg1)
-
