@@ -1,7 +1,9 @@
 ### Install Package ###
 def installpkg(arg1):
+    dependants = ['cmdexec']
     cmdexec("apt-get -q install "+arg1+" -y")
 
 ### Remove Package ###
 def removepkg(arg1):
+    dependants = ['cmdexec']
     cmdexec("apt-get -q remove "+arg1+" -y")
