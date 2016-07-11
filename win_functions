@@ -5,3 +5,7 @@ def installserverfeature(arg1):
 ### Uninstall Server Feature ###
 def uninstallserverfeature(arg1):
     cmdexec("powershell remove-windowsfeature -name "+arg1)
+
+### Apply Registry File ###
+def applyreg(arg1):
+    cmdexec("regedit /S "+arg1)
