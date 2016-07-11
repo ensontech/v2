@@ -1,6 +1,6 @@
 ### Start Service ###
 def startservice(arg1):
-    dependants = ['cmdexec']
+    dependants = ['cmdexec','detectplatform']
     x = detectplatform()
     if x == 'linux':
         cmdexec("service "+arg1+" start")
@@ -9,7 +9,7 @@ def startservice(arg1):
 
 ### Stop Service ###
 def stopservice(arg1):
-    dependants = ['cmdexec']
+    dependants = ['cmdexec','detectplatform']
     x = detectplatform()
     if x == 'linux':
         cmdexec("service "+arg1+" stop")
@@ -18,7 +18,7 @@ def stopservice(arg1):
 
 ### Restart Service ###
 def restartservice(arg1):
-    dependants = ['cmdexec']
+    dependants = ['cmdexec','detectplatform']
     x = detectplatform()
     if x == 'linux':
         cmdexec("service "+arg1+" restart")
