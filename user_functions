@@ -1,6 +1,6 @@
 ### Add User ###
 def adduser(arg1,arg2):
-    dependants = ['cmdexec']
+    dependants = ['cmdexec','detectplatform']
     p = detectplatform()
     if p == 'linux':
         cmdexec("useradd "+arg1)
@@ -10,7 +10,7 @@ def adduser(arg1,arg2):
 
 ### Delete User ###
 def deleteuser(arg1):
-    dependants = ['cmdexec']
+    dependants = ['cmdexec','detectplatform']
     p = detectplatform()
     if p == 'linux':
         cmdexec("deluser "+arg1)
