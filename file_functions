@@ -23,10 +23,10 @@ def deletefolder(arg1):
 def createfile(arg1,arg2):
     nf = open(arg1,"w")
     if arg2 != None:
-	    nf.write(arg2)
-	    nf.close()
-	else:
-		nf.close()
+    	nf.write(arg2)
+    	nf.close()
+    else:
+    	nf.close()
 
 ### Delete File ###
 def deletefile(arg1):
