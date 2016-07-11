@@ -13,4 +13,4 @@ def deleteuser(arg1):
     if p == 'linux':
         cmdexec("deluser "+arg1)
     else:
-        cmdexec("NET USER "+arg1+" /DELETE)
+        cmdexec("NET USER "+arg1+" /DELETE")
