@@ -16,9 +16,3 @@ def detectplatform():
     else:
         return "unrecognised"
 
-### ID Generator ###
-def genid():
-    import string
-    import random
-    return ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(9))
-
