@@ -1,7 +1,7 @@
 ### Function to run OS level commands ###
-def cmdexec(arg1):
+def cmdexec(command):
     import subprocess
-    cmd = arg1.split()
+    cmd = command.split()
     subprocess.call(cmd)
 
 ### Detect Platform ###
@@ -16,3 +16,15 @@ def detectplatform():
     else:
         return "unrecognised"
 
+### Save Config ###
+def saveconfig(configuration,name,path=""):
+    repopath = '/home/test'
+    sc = open((repopath+path+name).encode('string-escape'),"w")
+    sc.write(configuration)
+    sc.close()
+
+### Generate Config ID ###
+def genid():
+    import string
+    import random
+    return ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(9))
