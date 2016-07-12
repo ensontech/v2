@@ -15,3 +15,10 @@ def detectplatform():
         return "mac"
     else:
         return "unrecognised"
+
+### ID Generator ###
+def genid():
+    import string
+    import random
+    return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(8))
+
