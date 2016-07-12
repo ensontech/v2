@@ -23,15 +23,8 @@ def generatesource(arg1):
     i = functionindex()
     return i[f]
 
-### Generate Config ID ###
-def genid():
-    import string
-    import random
-    return ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(9))
-
 ### Write Config ###
 def writeconfig(args):
-    configid = genid()
     config = ""
     commands = args
     for c in commands:
@@ -50,7 +43,7 @@ def writeconfig(args):
             else:
                 config+= s
         config+= (c + '\n')
-    return ("id="+configid+"\n"+config)
+    return (config)
 
 ### EXAMPLE ###
 ### Import Compiler
