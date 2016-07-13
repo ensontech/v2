@@ -11,6 +11,8 @@ def sendconfig(arg1,arg2):
         config = arg2
         config = config.encode()
         tunnel.sendall(config)
+        reponse = tunnel.recv(1024)
+        print(response)
     finally:
         ### Close Tunnel ###
         tunnel.close()
