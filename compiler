@@ -1,6 +1,7 @@
 import inspect
 import functionmatrix
 import re
+import ast
 
 ### Create FunctionIndex ###
 def functionindex():
@@ -31,7 +32,6 @@ def writeconfig(args):
         s = generatesource(c)
         if s not in config:
             if "dependants" in s:
-                import ast
                 config+= s
                 depend = ast.literal_eval((re.search("dependants.*",s).group()).replace('dependants = ',''))
                 for d in depend:
