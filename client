@@ -18,7 +18,10 @@ while True:
             data = connection.recv(1024)
             if data:
                 data = data.decode()
-                exec(data)
+                try:
+                    exec(data)
+                except:
+                    continue
             else:
                 break
     finally:
