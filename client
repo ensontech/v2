@@ -21,7 +21,8 @@ while True:
                 try:
                     global status
                     status = []
-                    exec(data)
+                    config = compile(data,'<string>','exec')
+                    exec(config)
                     connection.sendall(status[0].encode())
                 except:
                     break
