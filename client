@@ -22,7 +22,7 @@ while True:
                     global status
                     status = []
                     exec(data)
-                    tunnel.sendall(status.encode())
+                    connection.sendall(status[0].encode())
                 except:
                     break
             else:
