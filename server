@@ -1,4 +1,10 @@
 import socket
+import string
+import random
+
+### Generate Config ID ###
+def genid():
+    return ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(9))
 
 def sendconfig(arg1,arg2):
     ### Create TCP/IP Socket ###
@@ -12,7 +18,8 @@ def sendconfig(arg1,arg2):
         config = config.encode()
         tunnel.sendall(config)
         reponse = tunnel.recv(1024)
-        print(response)
+        job = (genid() +":"+ response)
+        print(job)
     finally:
         ### Close Tunnel ###
         tunnel.close()
