@@ -2,7 +2,12 @@
 def cmdexec(arg1):
     import subprocess
     cmd = arg1.split()
-    subprocess.call(cmd)
+    ex = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
+    error = ex.communicate()[1].decode()
+    if error == '':
+        status.append(arg1+":OK")
+    else:
+        status.append(arg1+":"+error)
 
 ### Detect Platform ###
 def detectplatform():
