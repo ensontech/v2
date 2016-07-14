@@ -19,11 +19,12 @@ while True:
             if data:
                 data = data.decode()
                 try:
+                    global status
+                    status = []
                     exec(data)
-                    tunnel.sendall("OK".encode())
+                    tunnel.sendall(status.encode())
                 except:
-                    tunnel.sendall("FAILED".encode())
-                    continue
+                    break
             else:
                 break
     finally:
