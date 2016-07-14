@@ -7,7 +7,7 @@ def cmdexec(arg1):
     if error == '':
         status.append(arg1+":OK")
     else:
-        status.append(arg1+":"+error)
+        status.append(arg1+":\n"+error)
 
 ### Detect Platform ###
 def detectplatform():
