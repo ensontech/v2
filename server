@@ -17,8 +17,8 @@ def sendconfig(arg1,arg2):
         config = arg2
         config = config.encode()
         tunnel.sendall(config)
-        reponse = tunnel.recv(1024)
-        job = ("JobID:"+ genid() +" Client:"+ arg1 +":"+ response)
+        reponse = tunnel.recv(2048)
+        job = ("JobID:"+ genid() +"\nClient:"+ arg1 +":\n\n"+ response)
         print(job)
     finally:
         ### Close Tunnel ###
